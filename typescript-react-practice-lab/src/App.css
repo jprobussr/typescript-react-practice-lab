@@ -1,0 +1,32 @@
+.app {
+  min-height: 100vh;
+  display: grid;
+  background: var(--bg);
+  place-items: center;
+  padding: 2rem;
+}
+
+.hero {
+  width: min(100%, 42rem);
+  text-align: center;
+}
+
+.hero .eyebrow {
+  margin: 0 0 0.75;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
