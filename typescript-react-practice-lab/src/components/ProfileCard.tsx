@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './ProfileCard.css';
 import type { Profile } from '../data/profiles';
 
@@ -6,6 +7,8 @@ type ProfileCardProps = {
 };
 
 const ProfileCard = ({ profile }: ProfileCardProps) => {
+  const [isFollowing, setIsFollowing] = useState(false);
+
   return (
     <article className="profile-card">
       <div className="profile-card__header">
@@ -34,6 +37,15 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
           return <li key={skill}>{skill}</li>;
         })}
       </ul>
+
+      <button
+        className="profile-card__button"
+        onClick={() => {
+          setIsFollowing(!isFollowing);
+        }}
+      >
+        {isFollowing ? 'Following' : 'Follow'}
+      </button>
     </article>
   );
 };

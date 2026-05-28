@@ -14,7 +14,7 @@ export const profiles: Profile[] = [
     role: 'Front-End Developer',
     location: 'Murray, KY',
     isOnline: true,
-    skills: ['React', 'TypeScript', 'CSS'],
+    skills: ['React', 'TypeScript', 'CSS', 'Accessibility'],
   },
   {
     id: 2,
