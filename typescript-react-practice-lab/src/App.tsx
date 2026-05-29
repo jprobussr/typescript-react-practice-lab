@@ -4,10 +4,12 @@ import ProfileCard from './components/ProfileCard';
 import { profiles } from './data/profiles';
 
 type StatusFilter = 'all' | 'online' | 'offline';
+type SortOption = 'default' | 'name-asc' | 'name-desc';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
+  const [sortOption, setSortOption] = useState<SortOption>('default');
 
   const filteredProfiles = profiles.filter((profile) => {
     const searchValue = searchTerm.toLowerCase();
@@ -27,6 +29,20 @@ const App = () => {
 
     return matchesSearch && matchStatus;
   });
+
+  const sortedProfiles = [...filteredProfiles].sort(
+    (firstProfile, secondProfile) => {
+      if (sortOption === 'name-asc') {
+        return firstProfile.name.localeCompare(secondProfile.name);
+      }
+
+      if (sortOption === 'name-desc') {
+        return secondProfile.name.localeCompare(firstProfile.name);
+      }
+
+      return 0;
+    },
+  );
 
   return (
     <main className="app">
@@ -64,17 +80,34 @@ const App = () => {
           <option value="offline">Offline only</option>
         </select>
 
+        <label htmlFor="sort-option" className="filter-label">
+          Sort profiles
+        </label>
+
+        <select
+          id="sort-option"
+          className="filter-select"
+          value={sortOption}
+          onChange={(e) => {
+            setSortOption(e.target.value as SortOption);
+          }}
+        >
+          <option value="default">Default Value</option>
+          <option value="name-asc">Name A-Z</option>
+          <option value="name-desc">Name Z-A</option>
+        </select>
+
         <h1>Profile Card Lab</h1>
         <p>Practicing typed data, reusable components, and professional UI</p>
       </section>
 
-      <p className='results-count'>
+      <p className="results-count">
         Showing {filteredProfiles.length} of {profiles.length} profiles
       </p>
 
       <section className="profile-grid">
-        {filteredProfiles.length > 0 ? (
-          filteredProfiles.map((profile) => {
+        {sortedProfiles.length > 0 ? (
+          sortedProfiles.map((profile) => {
             return <ProfileCard key={profile.id} profile={profile} />;
           })
         ) : (
