@@ -3,20 +3,29 @@ import './App.css';
 import ProfileCard from './components/ProfileCard';
 import { profiles } from './data/profiles';
 
+type StatusFilter = 'all' | 'online' | 'offline';
+
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
 
   const filteredProfiles = profiles.filter((profile) => {
     const searchValue = searchTerm.toLowerCase();
 
-    return (
+    const matchesSearch =
       profile.name.toLowerCase().includes(searchValue) ||
       profile.role.toLowerCase().includes(searchValue) ||
       profile.location.toLowerCase().includes(searchValue) ||
       profile.skills.some((skill) => {
         return skill.toLowerCase().includes(searchValue);
-      })
-    );
+      });
+
+    const matchStatus =
+      statusFilter === 'all' ||
+      (statusFilter === 'online' && profile.isOnline) ||
+      (statusFilter === 'offline' && !profile.isOnline);
+
+    return matchesSearch && matchStatus;
   });
 
   return (
@@ -38,18 +47,39 @@ const App = () => {
           }}
         />
 
+        <label htmlFor="status-filter" className="filter-label">
+          Filter by status
+        </label>
+
+        <select
+          id="status-filter"
+          className="filter-select"
+          value={statusFilter}
+          onChange={(e) => {
+            setStatusFilter(e.target.value as StatusFilter);
+          }}
+        >
+          <option value="all">All profiles</option>
+          <option value="online">Online only</option>
+          <option value="offline">Offline only</option>
+        </select>
+
         <h1>Profile Card Lab</h1>
         <p>Practicing typed data, reusable components, and professional UI</p>
       </section>
 
+      <p className='results-count'>
+        Showing {filteredProfiles.length} of {profiles.length} profiles
+      </p>
+
       <section className="profile-grid">
-       {filteredProfiles.length > 0 ? (
-        filteredProfiles.map((profile) => {
-          return <ProfileCard key={profile.id} profile={profile} />
-        })
-       ) : (
-        <p className="empty-message">No profiles match your search.</p>
-       )}
+        {filteredProfiles.length > 0 ? (
+          filteredProfiles.map((profile) => {
+            return <ProfileCard key={profile.id} profile={profile} />;
+          })
+        ) : (
+          <p className="empty-message">No profiles match your search.</p>
+        )}
       </section>
     </main>
   );

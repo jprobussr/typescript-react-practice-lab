@@ -100,3 +100,43 @@
   outline: 3px solid rgba(56, 189, 248, 0.25);
   border-color: #38bdf8;
 }
+
+.filter-label {
+  display: block;
+  margin-top: 1rem;
+  color: #cbd5e1;
+  font-weight: 700;
+}
+
+.filter-select {
+  width: 100%;
+  margin-top: 0.5rem;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  background: #111827;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: 3px solid rgba(56, 189, 248, 0.25);
+  border-color: #38bdf8;
+}
+
+.results-count {
+  margin-bottom: 1rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  border: 1px dashed #334155;
+  border-radius: 1rem;
+  padding: 2rem;
+  color: #cbd5e1;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.6);
+}
