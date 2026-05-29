@@ -73,6 +73,30 @@
   border: 1px solid #334155;
 }
 
+/* Search Label needs to be seperate component  */
+.search-label {
+  display: block;
+  margin-top: 1.5rem;
+  color: #cbd5e1;
+  font-weight: 700;
+}
 
+.search-input {
+  width: 100%;
+  margin-top: 1.3rem;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  background: #111827;
+  color: #e2e8f0;
+}
 
+.search-input::placeholder {
+  color: #dcdfe3;
+}
 
+.search-input:focus {
+  outline: 3px solid rgba(56, 189, 248, 0.25);
+  border-color: #38bdf8;
+}
