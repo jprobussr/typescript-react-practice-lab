@@ -1,0 +1,17 @@
+.exercise-one {
+  max-width: 48rem;
+}
+
+.exercise-one h1 {
+  margin-bottom: 0.5rem;
+}
+
+.exercise-one h2 {
+  margin-top: 0;
+  color: #d1d5db;
+  font-size: 1.25rem;
+}
+
+.exercise-one p {
+  color: #d1d5db;
+}
