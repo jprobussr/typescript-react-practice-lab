@@ -1,7 +1,7 @@
 import './ExerciseOne.css';
 
 const ExerciseOne = () => {
-  const studentId: number = Math.floor(Math.random() * 1000 + 1);
+  const studentId: number = 101
   const studentName: string = 'Homer';
   const lastName: string = 'Simpson';
   const lessonNumber: number = 1;
