@@ -15,3 +15,15 @@
 .exercise-one p {
   color: #d1d5db;
 }
+
+.exercise-one__card {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #374151;
+  border-radius: 0.75rem;
+  background-color: #1f2937;
+}
+
+.exercise-one__card p {
+  margin: 0.5rem 0;
+}
