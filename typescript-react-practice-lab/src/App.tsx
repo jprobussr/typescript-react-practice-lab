@@ -1,14 +1,12 @@
-import './App.css';
-import ExerciseOne from './data/chapterOne/ExerciseOne/ExerciseOne';
-import ExerciseTwo from './data/chapterOne/ExerciseTwo';
+import "./App.css";
+import ExerciseTwo from "./data/chapterOne/ExerciseTwo/ExerciseTwo";
 
 const App = () => {
   return (
     <main className="app">
-      <ExerciseOne />
       <ExerciseTwo />
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,0 +1,14 @@
+.exercise-two {
+  padding: 2rem;
+}
+
+.product-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-card {
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 0.75rem;
+}
