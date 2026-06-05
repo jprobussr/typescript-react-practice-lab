@@ -1,0 +1,43 @@
+.exercise-three {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  background: #101828;
+  color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exercise-three h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+}
+
+.exercise-three h2 {
+  margin: 0.75rem 0 2rem;
+  color: #93c5fd;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  text-align: center;
+}
+
+.exercise-three__card {
+  width: min(100%, 28rem);
+  padding: 2rem;
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  border-radius: 1.25rem;
+  background: #1f2937;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.25);
+}
+
+.exercise-three__card p {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.exercise-three__card p:last-child {
+  margin-bottom: 0;
+  color: #86efac;
+  font-weight: 700;
+}
