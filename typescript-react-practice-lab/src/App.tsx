@@ -1,11 +1,11 @@
 import "./App.css";
-import ExerciseThree from "./data/chapterOne/ExerciseThree/ExerciseThree";
-import ExerciseTwo from "./data/chapterOne/ExerciseTwo/ExerciseTwo";
+import ExerciseFour from "./data/chapterOne/ExerciseFour/ExerciseFour";
+
 
 const App = () => {
   return (
     <main className="app">
-      <ExerciseThree />
+      <ExerciseFour />
     </main>
   );
 };
